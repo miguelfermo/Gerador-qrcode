@@ -3,12 +3,12 @@ from flask import Flask, render_template, request, send_file, make_response, ses
 import os
 from io import BytesIO
 
-app = Flask(__name__)
+app = Flask(__name__, static_url_path='/static', static_folder='static')
 app.secret_key = os.urandom(24)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html') 
 
 @app.route('/gerar', methods=['POST'])
 def gerar():
