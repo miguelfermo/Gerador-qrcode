@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gerador de QR Code</title>
     <style>
         body {
@@ -18,12 +19,12 @@
 
         .container {
             max-width: 420px;
-            width: 100%;
+            width: 92vw;
             margin: 0 auto;
             background: #1a2238;
             border-radius: 16px;
             box-shadow: 0 4px 24px #0004;
-            padding: 32px 28px 24px 28px;
+            padding: 32px 18px 24px 18px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -91,6 +92,25 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                max-width: 98vw;
+                padding: 18px 4vw 18px 4vw;
+            }
+
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            input[type="text"] {
+                font-size: 0.98rem;
+            }
+
+            button {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
