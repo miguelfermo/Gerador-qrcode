@@ -1,37 +1,88 @@
 body {
-    background-color: #f2f2f2;
-    font-family: Arial, sans-serif;
-}
-
-h1 {
-    text-align: center;
-    color: #333;
-    margin-top: 300px;
-}
-
-form {
+    background: #181a23;
+    color: #e0e6ed;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-input {
-    padding: 10px;
-    margin: 5px;
-    width: 300px;
+.container {
+    max-width: 420px;
+    width: 100%;
+    margin: 0 auto;
+    background: #1a2238;
+    border-radius: 16px;
+    box-shadow: 0 4px 24px #0004;
+    padding: 32px 28px 24px 28px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: #00aaff;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 2rem;
+    text-align: center;
+}
+
+label {
+    color: #e0e6ed;
+    font-size: 1.1rem;
+    align-self: flex-start;
+}
+
+input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    margin: 12px 0 24px 0;
+    background: #222b45;
+    color: #e0e6ed;
+    font-size: 1rem;
+    outline: none;
 }
 
 button {
-    padding: 10px;
-    margin: 5px;
-    width: 100px;
-    background-color: #4CAF50;
-    color: white;
+    background: linear-gradient(90deg, #00aaff 0%, #0050c8 100%);
+    color: #fff;
     border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    width: 100%;
+    font-size: 1.1rem;
+    font-weight: 600;
     cursor: pointer;
+    box-shadow: 0 4px 16px #0050c855, 0 1.5px 4px #0002;
+    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    margin-bottom: 0;
 }
 
-button:hover {
-    background-color: #45a049;
+button:hover, button:focus {
+    background: linear-gradient(90deg, #0050c8 0%, #00aaff 100%);
+    transform: translateY(-2px) scale(1.04);
+    box-shadow: 0 8px 24px #00aaff55, 0 2px 8px #0003;
+    outline: none;
+}
+
+.qr-section {
+    text-align: center;
+    margin-top: 24px;
+}
+
+a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+a:hover {
+    text-decoration: underline;
 }

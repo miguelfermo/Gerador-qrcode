@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
-    <title>QR Code</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/mostrando_qr_code.css') }}">
+    <meta charset="UTF-8">
+    <title>Seu QR Code</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
-    <div class="header">
-        <h1>QR Code</h1>
-        <img src="/qr_code.png" alt="">
-        <a href="/qr_code.png" download="qr_code.png">
-            <button href="/qr_code.png" download="/qr_code.png">Download PNG</button>
-        </a>
+    <div class="container">
+        <h1>Seu QR Code</h1>
+        <div class="qr-section">
+            <img src="{{ url_for('qr_code') }}" alt="QR Code" style="max-width: 300px; background: #fff; padding: 16px; border-radius: 12px; box-shadow: 0 2px 8px #0002;">
+        </div>
+        <div style="text-align:center; margin-top: 24px;">
+            <a href="/">Gerar outro QR Code</a>
+        </div>
     </div>
 </body>
 </html>
