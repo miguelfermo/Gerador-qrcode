@@ -12,7 +12,7 @@ def index():
 
 @app.route('/gerar', methods=['POST'])
 def gerar():
-    url = request.form['url']
+    url = request.form['url'] 
     session['last_url'] = url
     return render_template('mostrando_qr_code.html')
 
