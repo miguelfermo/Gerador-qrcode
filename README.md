@@ -2,6 +2,8 @@
 
 Este é um gerador de QR code por meio de uma url ou frases, também permitindo o download gratuito para o usuário.
 
+Acesse: https://qrcode-rapido.vercel.app/
+
 ## 🔧 Intalação:
 1. Clone este repositório com `git clone` ou baixe o código-fonte.
 2. Instalação de Python, caso não estiver previamente instalada em seu computador
