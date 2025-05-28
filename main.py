@@ -1,27 +1,34 @@
-import segno 
-# qr = segno.make('https://miguelfermo.netlify.app')
-
-from flask import Flask, render_template_string, request, redirect, url_for, session, jsonify, send_file, render_template
+import segno
+from flask import Flask, render_template, request, send_file, make_response, session
 import os
-import time
-  
+from io import BytesIO
+
 app = Flask(__name__)
 app.secret_key = os.urandom(24)
 
-@app.route('/') 
+@app.route('/')
 def index():
-    return render_template('index.html') 
+    return render_template('index.html')
 
 @app.route('/gerar', methods=['POST'])
 def gerar():
     url = request.form['url']
-    qr = segno.make(url)
-    qr.save('qr_code.png', scale=100, border=5) 
+    session['last_url'] = url
     return render_template('mostrando_qr_code.html')
 
 @app.route('/qr_code.png')
 def qr_code():
-    return send_file('qr_code.png')
+    url = session.get('last_url', None)
+    if not url:
+        return '', 404
+    qr = segno.make(url)
+    img_io = BytesIO()
+    qr.save(img_io, kind='png', scale=10, border=5)
+    img_io.seek(0)
+    response = make_response(img_io.read())
+    response.headers.set('Content-Type', 'image/png')
+    response.headers.set('Content-Disposition', 'inline; filename=qr_code.png')
+    return response
 
 if __name__ == '__main__':
     app.run(debug=True)
